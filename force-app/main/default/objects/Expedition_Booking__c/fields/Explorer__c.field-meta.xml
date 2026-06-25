@@ -8,7 +8,6 @@
     <relationshipLabel>Expedition Bookings</relationshipLabel>
     <relationshipName>Expedition_Bookings</relationshipName>
     <required>false</required>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>
