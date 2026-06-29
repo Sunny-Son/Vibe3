@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Full access to Lunar Basecamp custom fields</description>
+    <description>Full access to all Lunar Basecamp custom objects and fields</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Lunar Basecamp Admin</label>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lunar_Explorer__c.Certification_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lunar_Explorer__c.EVA_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+
+    <!-- Lunar_Explorer__c fields (Full_Name__c is required, no FLS needed) -->
     <fieldPermissions>
         <editable>true</editable>
         <field>Lunar_Explorer__c.Email__c</field>
@@ -25,7 +17,51 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lunar_Explorer__c.EVA_Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lunar_Explorer__c.Certification_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lunar_Explorer__c.Medical_Clearance_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Gear_Item__c fields (Item_Name__c and Serial_Number__c are required, no FLS needed) -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Gear_Item__c.Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Gear_Item__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Gear_Item__c.Daily_Rental_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Gear_Item__c.Purchase_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Gear_Item__c.Maintenance_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Expedition_Booking__c fields (Expedition_Name__c is required, no FLS needed) -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Expedition_Booking__c.Explorer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -53,6 +89,8 @@
         <field>Expedition_Booking__c.Total_Cost__c</field>
         <readable>true</readable>
     </fieldPermissions>
+
+    <!-- Safety_Certification__c fields -->
     <fieldPermissions>
         <editable>true</editable>
         <field>Safety_Certification__c.Explorer__c</field>
@@ -83,11 +121,15 @@
         <field>Safety_Certification__c.Pass_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
+
+    <!-- Expedition_Gear__c fields (Expedition_Booking__c and Gear_Item__c are master-detail — skip FLS) -->
     <fieldPermissions>
         <editable>true</editable>
         <field>Expedition_Gear__c.Quantity__c</field>
         <readable>true</readable>
     </fieldPermissions>
+
+    <!-- Object permissions -->
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
